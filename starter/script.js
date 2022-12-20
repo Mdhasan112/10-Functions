@@ -25,6 +25,7 @@ createBooking('LH123', undefined, 1000);
 ////////////////////////////////////////////
 */
 
+/*
 ////////////////////////////////////////////
 const flight = 'LH123';
 const jonas = {
@@ -51,3 +52,34 @@ const newPassport = function (person) {
 };
 newPassport(jonas);
 checkIn(flight, jonas);
+////////////////////////////////////////////
+*/
+
+/*
+////////////////////////////////////////////
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+console.log(upperFirstWord('my name is Hasan'));
+//Higher order function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`transformed string: ${fn(str)}`);
+  console.log(`transformed by: ${fn.name}`);
+};
+transformer('Javascript is the best', upperFirstWord);
+transformer('Javascript is the best', oneWord);
+
+//js uses callback all the time
+const high5 = function () {
+  console.log('❤');
+};
+document.body.addEventListener('click', high5);
+/////////////////////////////////////////
+*/
