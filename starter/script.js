@@ -103,3 +103,17 @@ const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 greetArr('Hi')('Jonas');
 /////////////////////////////////////////
 */
+
+////////////////////////////////////////
+const DavidMilan = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+  },
+};
+
+DavidMilan.book(30, 'hasan');
