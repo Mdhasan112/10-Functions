@@ -112,7 +112,7 @@ const lufthansa = {
   //book: function() {}
   book(flightNum, name) {
     console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
     );
     this.bookings.push({ flight: `${this.iataCode} ${flightNum}`, name });
   },
@@ -147,3 +147,20 @@ console.log(swiss);
 
 //or
 lufthansa.book.call(swiss, ...flightData); //best way
+
+//Bind method
+const book = lufthansa.book;
+// book.call(euroWings, 255, 'jonas');
+
+const bookEW = book.bind(euroWings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(254, 'Smith');
+
+const bookMN = book.bind(euroWings, 23);
+bookMN('William');
+bookMN('Stock');
+bookMN('Warner');
+
+//With event listeners
