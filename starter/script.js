@@ -104,6 +104,7 @@ greetArr('Hi')('Jonas');
 /////////////////////////////////////////
 */
 
+/*
 ////////////////////////////////////////
 const lufthansa = {
   airline: 'Lufthansa',
@@ -164,3 +165,36 @@ bookMN('Stock');
 bookMN('Warner');
 
 //With event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane();
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+//Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+///////////////////////////////////////
+*/
+
+/*
+///////////////////////////////////////
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//Immediately Invoked Function Expressions (IIFE)
+(function () {
+  console.log('This will never run again');
+})();
+
+//or
+(() => console.log('This will also never run again'))();
+////////////////////////////////////////
+*/
